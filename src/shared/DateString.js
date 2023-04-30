@@ -9,16 +9,20 @@ const DateString = ({ timestamp }) => {
     setDateObj({
       date: responseDate.format('DD'),
       month: responseDate.format('MMM'),
-      year: responseDate.format('YYYY')
+      year: responseDate.format('YYYY'),
+      time: responseDate.format('h:mm:ss a')
     })
   }, [timestamp])
+
   return (
-    <div>
-      <h4>
-        {dateObj?.date}, {dateObj?.month}
-      </h4>
-      <h4>{dateObj?.year}</h4>
-    </div>
+    dateObj?.date && (
+      <div>
+        <h4 className='mt-2'>
+          {dateObj?.date} {dateObj?.month}, {dateObj?.year}
+        </h4>
+        <strong>{dateObj?.time}</strong>
+      </div>
+    )
   )
 }
 

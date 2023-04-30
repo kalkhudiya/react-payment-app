@@ -320,7 +320,11 @@ function InitPayment() {
                 </div>
                 <hr />
                 <div className='d-flex justify-content-between mb-4 small'>
-                  <span>TOTAL</span> <strong className='text-dark'>${amount}</strong>
+                  <span>TOTAL</span>{' '}
+                  <strong className='text-dark'>
+                    {getCurrencySymbol()}
+                    {amount}
+                  </strong>
                 </div>
                 <Form.Group className='mb-3'>
                   <Form.Check

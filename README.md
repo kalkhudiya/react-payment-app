@@ -11,6 +11,7 @@ If you want to switch between email ids, Just init a new payment with the email 
 ### Assumption
 Assuming user as authorized user, Based on the email id added. All the data associated to this email id only.\ 
 Adding a fixed description for all the payment requests.\
+For this demo passing env variable this can be changed to env files too.\
 For this demo I have written all the payment API on client side this need to be moved to server side in real file scenario.
 
 ### Library used in this project
