@@ -13,7 +13,8 @@ Assuming user as authorized user, Based on the email id added. All the data asso
 Adding a fixed description for all the payment requests.\
 For this demo passing env variable this can be changed to env files too.\
 For now Stripe client secret keys are hard coded that also can be moved to backend or can be read from env file. In real life scenario that env file will not be in this code base.\
-For this demo I have written all the payment API on client side this need to be moved to server side in real file scenario.
+For this demo I have written all the payment API on client side this need to be moved to server side in real file scenario.\
+For this demo I am writing test cases only for init payment page.
 
 ### Library used in this project
 [![reactjs](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://react.dev/)

@@ -177,102 +177,114 @@ function InitPayment() {
                 <h5 className='px-4 py-3'>Enter user details</h5>
                 <div className='accordion-body'>
                   <div className='mb-3'>
-                    <Form.Label> Name </Form.Label>
-                    <Form.Control
-                      type='text'
-                      value={name === null ? '' : name}
-                      onChange={onInputChange(setName)}
-                      placeholder='Enter your name'
-                      isInvalid={!!errorObj.name}
-                    />
-                    <Form.Control.Feedback type='invalid'>
-                      Please provide a valid name.
-                    </Form.Control.Feedback>
+                    <Form.Group controlId='name'>
+                      <Form.Label> Name </Form.Label>
+                      <Form.Control
+                        type='text'
+                        value={name === null ? '' : name}
+                        onChange={onInputChange(setName)}
+                        placeholder='Enter your name'
+                        isInvalid={!!errorObj.name}
+                      />
+                      <Form.Control.Feedback type='invalid'>
+                        Please provide a valid name.
+                      </Form.Control.Feedback>
+                    </Form.Group>
                   </div>
                   <div className='mb-3'>
-                    <Form.Label> Email id </Form.Label>
-                    <Form.Control
-                      type='text'
-                      value={email === null ? '' : email}
-                      onChange={onInputChange(setEmail)}
-                      placeholder='Enter your email id'
-                      isInvalid={!!errorObj.email}
-                    />
-                    <Form.Control.Feedback type='invalid'>
-                      Please provide a valid email id.
-                    </Form.Control.Feedback>
+                    <Form.Group controlId='emailId'>
+                      <Form.Label> Email id </Form.Label>
+                      <Form.Control
+                        type='text'
+                        value={email === null ? '' : email}
+                        onChange={onInputChange(setEmail)}
+                        placeholder='Enter your email id'
+                        isInvalid={!!errorObj.email}
+                      />
+                      <Form.Control.Feedback type='invalid'>
+                        Please provide a valid email id.
+                      </Form.Control.Feedback>
+                    </Form.Group>
                   </div>
                 </div>
                 <h5 className='px-4 py-3'>Enter payment details</h5>
                 <div className='accordion-body'>
                   <div className='mb-3'>
-                    <Form.Label>Card Number</Form.Label>
-                    <Row>
-                      <Col xs={9}>
-                        <Form.Control
-                          type='text'
-                          value={cardNumber === null ? '' : cardNumber}
-                          onChange={onInputChange(setCardNumber)}
-                          placeholder='Enter card number'
-                          isInvalid={!!errorObj.cardNumber}
-                        />
-                        <Form.Control.Feedback type='invalid'>
-                          Please provide a valid card number.
-                        </Form.Control.Feedback>
-                      </Col>
-                      <Col xs={1} className='py-1'>
-                        <span className='text-capitalize'>{cardType}</span>
-                      </Col>
-                    </Row>
+                    <Form.Group controlId='creditCardNumber'>
+                      <Form.Label>Card number</Form.Label>
+                      <Row>
+                        <Col xs={9}>
+                          <Form.Control
+                            type='text'
+                            value={cardNumber === null ? '' : cardNumber}
+                            onChange={onInputChange(setCardNumber)}
+                            placeholder='Enter card number'
+                            isInvalid={!!errorObj.cardNumber}
+                          />
+                          <Form.Control.Feedback type='invalid'>
+                            Please provide a valid card number.
+                          </Form.Control.Feedback>
+                        </Col>
+                        <Col xs={1} className='py-1'>
+                          <span className='text-capitalize'>{cardType}</span>
+                        </Col>
+                      </Row>
+                    </Form.Group>
                   </div>
                   <Row>
                     <Col xs={4}>
                       <div className='mb-3'>
-                        <Form.Label>Expiry date</Form.Label>
-                        <Form.Control
-                          type='text'
-                          value={expiry === null ? '' : expiry}
-                          onChange={onInputChange(setExpiry)}
-                          placeholder='MM/YY'
-                          isInvalid={!!errorObj.expiry}
-                        />
-                        <Form.Control.Feedback type='invalid'>
-                          Please provide a valid expiry date.
-                        </Form.Control.Feedback>
+                        <Form.Group controlId='expiryDate'>
+                          <Form.Label>Expiry date</Form.Label>
+                          <Form.Control
+                            type='text'
+                            value={expiry === null ? '' : expiry}
+                            onChange={onInputChange(setExpiry)}
+                            placeholder='MM/YY'
+                            isInvalid={!!errorObj.expiry}
+                          />
+                          <Form.Control.Feedback type='invalid'>
+                            Please provide a valid expiry date.
+                          </Form.Control.Feedback>
+                        </Form.Group>
                       </div>
                     </Col>
                     <Col xs={4}>
                       <div className='mb-3'>
-                        <Form.Label>CVV Code</Form.Label>
-                        <Form.Control
-                          type='password'
-                          maxLength={3}
-                          value={cvv === null ? '' : cvv}
-                          onChange={onInputChange(setCvv)}
-                          placeholder='CVV'
-                          isInvalid={!!errorObj.cvv}
-                        />
-                        <Form.Control.Feedback type='invalid'>
-                          Please provide a valid CVV code.
-                        </Form.Control.Feedback>
+                        <Form.Group controlId='cvvCode'>
+                          <Form.Label>CVV code</Form.Label>
+                          <Form.Control
+                            type='password'
+                            maxLength={3}
+                            value={cvv === null ? '' : cvv}
+                            onChange={onInputChange(setCvv)}
+                            placeholder='CVV'
+                            isInvalid={!!errorObj.cvv}
+                          />
+                          <Form.Control.Feedback type='invalid'>
+                            Please provide a valid CVV code.
+                          </Form.Control.Feedback>
+                        </Form.Group>
                       </div>
                     </Col>
                   </Row>
                   <Row>
                     <Col xs={4}>
-                      <Form.Label>Payable amount</Form.Label>
-                      <Form.Control
-                        type='number'
-                        value={amount === null ? 0 : amount}
-                        onChange={onInputChange(setAmount)}
-                        className='form-control'
-                        placeholder='Amount'
-                        isInvalid={!!errorObj.amount}
-                      />
+                      <Form.Group controlId='payableAmount'>
+                        <Form.Label>Payable amount</Form.Label>
+                        <Form.Control
+                          type='number'
+                          value={amount === null ? 0 : amount}
+                          onChange={onInputChange(setAmount)}
+                          className='form-control'
+                          placeholder='Amount'
+                          isInvalid={!!errorObj.amount}
+                        />
 
-                      <Form.Control.Feedback type='invalid'>
-                        Payable amount should be greater than 0.
-                      </Form.Control.Feedback>
+                        <Form.Control.Feedback type='invalid'>
+                          Payable amount should be greater than 0.
+                        </Form.Control.Feedback>
+                      </Form.Group>
                     </Col>
                   </Row>
                 </div>
@@ -282,7 +294,7 @@ function InitPayment() {
           <Col xs={3}>
             <div className='card position-sticky top-0'>
               <div className='p-3 bg-light bg-opacity-10'>
-                <h6 className='card-title mb-3'>Order Summary</h6>
+                <h6 className='card-title mb-3'>Order summary</h6>
                 <div className='d-flex justify-content-between mb-4 small'>
                   <span>Name</span> <strong className='text-dark'>{name}</strong>
                 </div>
