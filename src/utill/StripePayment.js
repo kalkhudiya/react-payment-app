@@ -3,7 +3,7 @@ import Stripe from 'stripe'
 const stripe = new Stripe(
   'sk_test_51N2AXoSCavYZPAvEeex3jAIQF3JPBdDHSY9X599N3jthatRGfNw9fiE5osNT0oxCGcoFJwPtrjKNWCTtukxutLea00BOslFaTx'
 )
-console.log('process.env.PAYMENT_RETURN_URL', process.env)
+
 const currency = 'inr'
 
 export const paymentFailure = 'failed_pay'
@@ -47,7 +47,7 @@ export const chargePayment = async (customerId, paymentMethodId, amount) => {
       enabled: true
     },
     description: 'Custom payment', // TODO: This can be configured based on payment type
-    return_url: process.env.PAYMENT_RETURN_URL || 'http://localhost:3000/payment-status' // This can be taken from environment file also
+    return_url: process.env.REACT_APP_PAYMENT_RETURN_URL || 'http://localhost:3000/payment-status' // This can be taken from environment file also
   })
 
   if (
