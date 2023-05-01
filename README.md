@@ -12,6 +12,7 @@ If you want to switch between email ids, Just init a new payment with the email 
 Assuming user as authorized user, Based on the email id added. All the data associated to this email id only.\ 
 Adding a fixed description for all the payment requests.\
 For this demo passing env variable this can be changed to env files too.\
+For now Stripe client secret keys are hard coded that also can be moved to backend or can be read from env file. In real life scenario that env file will not be in this code base.\
 For this demo I have written all the payment API on client side this need to be moved to server side in real file scenario.
 
 ### Library used in this project
@@ -19,6 +20,14 @@ For this demo I have written all the payment API on client side this need to be 
 [![bootstrap](https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white)](https://react-bootstrap.github.io/)
 [![stripe](https://img.shields.io/badge/Stripe-626CD9?style=for-the-badge&logo=Stripe&logoColor=white)](https://stripe.com/en-in)
 
+
+### Stripe demo card number
+|Card number |Details|
+|--- | --- |
+|4000000000003220| 3D Secure 2 authentication must be completed on all transactions. Triggers the challenge flow with Out of Band UI.
+|4000000000003238| 3D Secure 2 authentication must be completed on all transactions. Triggers the challenge flow with One Time Passcode UI.
+|4000000000003246| 3D Secure 2 authentication must be completed on all transactions. Triggers the challenge flow with single-select UI.
+|4000000000003253| 3D Secure 2 authentication must be completed on all transactions. Triggers the challenge flow with multi-select UI.
 
 ## Available Scripts
 
