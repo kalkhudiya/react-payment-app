@@ -30,6 +30,9 @@ For this demo I am writing test cases only for init payment page.
 |4000000000003246| 3D Secure 2 authentication must be completed on all transactions. Triggers the challenge flow with single-select UI.
 |4000000000003253| 3D Secure 2 authentication must be completed on all transactions. Triggers the challenge flow with multi-select UI.
 
+**Expiry date** should be valid future date on DDMM or DD/MM format.\
+**CVV** can be any 3 digit numeric value.
+
 ## Available Scripts
 
 In the project directory, you can run:
