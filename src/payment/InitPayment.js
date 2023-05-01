@@ -345,6 +345,7 @@ function InitPayment() {
                 <Form.Group controlId='tAndC' className='mb-3'>
                   <Form.Check
                     checked={tAndC}
+                    onChange={onInputChange()}
                     onClick={(e) => {
                       setTAndC(e.target.checked)
                     }}
