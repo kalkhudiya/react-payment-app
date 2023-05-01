@@ -3,7 +3,7 @@
 This is a demo project created by Virendra.
 
 ### Description
-All the user related data are store in the client side only.\
+This project used React js, Bootstrap and Stripe for accepting payment using cards, This can be accessed from https://react-payment-app-tau.vercel.app/. All the user related data are store in the client side only.\
 Data of all pages of this app is associated on the user's email id, And it's retrieved from Stripe payment gateway APIs.\
 The payment app is associated for a email, Once a new email is entered in to the payment form then this will replace the existing email on local storage.\
 If you want to switch between email ids, Just init a new payment with the email you want to switch for.
