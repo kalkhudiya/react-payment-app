@@ -29,6 +29,7 @@ function InitPayment() {
   const [expiry, setExpiry] = useState(null)
   const [name, setName] = useState(null)
   const [paymentInfoStep, setPaymentInfoStep] = useState('')
+  const [tAndC, setTAndC] = useState(false)
 
   const onInputChange = (setterMethod) => {
     return (e) => {
@@ -123,6 +124,9 @@ function InitPayment() {
     }
     if (amount < 1) {
       nextErrObj.amount = true
+    }
+    if (tAndC === false) {
+      nextErrObj.tAndC = true
     }
 
     setErrorObj({
@@ -338,14 +342,21 @@ function InitPayment() {
                     {amount}
                   </strong>
                 </div>
-                <Form.Group className='mb-3'>
+                <Form.Group controlId='tAndC' className='mb-3'>
                   <Form.Check
+                    checked={tAndC}
+                    onClick={(e) => {
+                      setTAndC(e.target.checked)
+                    }}
+                    isInvalid={!!errorObj.tAndC}
                     type='checkbox'
                     label={
                       <>
                         <b>I agree to the</b>&nbsp; <a href='#'>terms and conditions</a>
                       </>
                     }
+                    feedback='You must agree before submitting.'
+                    feedbackType='invalid'
                   />
                 </Form.Group>
                 <button className='btn btn-primary w-100 mt-2'>Place order</button>
